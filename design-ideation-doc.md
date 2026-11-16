@@ -268,6 +268,8 @@ Centimeter-level positioning is what makes autonomous rovers practical, and it's
 Open questions: how corrections reach fields beyond Wi-Fi range; who maintains and surveys the base station; and what each robot does when corrections drop. Each robot's fallback behavior shall be declared in its status report and shall be one of: degrade to standard GNSS, with the accuracy loss declared as a position-accuracy class and without claiming precision-dependent tasks (seeding, precision spraying) while degraded; or execute the §4.1 safe state.
 
 11. Prior art and reusable projects
+
+For readable summaries of existing community networks, communication projects, standards, and field research, see [Existing Projects & Research](research-landscape.md). This is a separate research collection; the summaries inform exploration but do not create design decisions.
 None of the sources below have been reviewed in depth yet. The first research task is to confirm what each one actually provides. Y.2256 has been checked only at the level of its summary and table of contents.
 
 11.1 Papers and standards
