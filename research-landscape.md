@@ -1,6 +1,6 @@
 # Existing Projects & Research
 
-Nov 16, 2026 · v0.2.0 · exploratory research
+Nov 16, 2026 · v0.3.0 · exploratory research
 
 ## Purpose
 
@@ -28,7 +28,7 @@ A project can fit more than one category. A working project is not automatically
 | Mixed communication media | Reticulum, private agricultural network trial | Connecting different radio and wired links |
 | Local device mesh | Bluetooth Mesh | Short-range many-to-many sensor and building networks |
 | Disconnected communication | Delay-Tolerant Networking, Bundle Protocol v7 | Store-and-forward between places that are not always connected |
-| Local/offline computing | Internet-in-a-Box, Kiwix, Portable Network Kits | Useful local services without internet access |\n| Disconnected data synchronization | Syncthing, Automerge, local-first software | Moving and merging changes after devices reconnect |\n| Power-resilient nodes | Portable Network Kits, TakNet 2, Zenzeleni | Solar/battery operation and low-power design examples |\n| Research background | 2019 mesh survey, 2022 tractor trial, 2026 LoRaMESH/HaLow trial | Technology comparisons and measured field examples |
+| Local/offline computing | Internet-in-a-Box, Kiwix, Portable Network Kits | Useful local services without internet access |\n| Disconnected data synchronization | Syncthing, Automerge, local-first software | Moving and merging changes after devices reconnect |\n| Power-resilient nodes | Portable Network Kits, TakNet 2, Zenzeleni, NodeNet, DC Mesh | Solar/battery operation and low-power design examples |\n| Recent community mesh field evidence | NodeNet (Amsterdam), CRISiSLab (Wellington), DC Mesh, OVMesh | Measured delivery, coverage limits, cost, firmware operations, volunteer workload |\n| Research background | 2019 mesh survey, 2022 tractor trial, 2026 LoRaMESH/HaLow trial | Technology comparisons and measured field examples |
 
 ---
 
@@ -420,7 +420,75 @@ Source: [ILO case study: Zenzeleni Community Networks (PDF)](https://www.anses.o
 
 ---
 
-## 10. What these examples collectively show
+## 10. Recent field evidence (2026)
+
+This section adds recent deployments and tests that provide practical evidence about operating community networks. These examples are not all directly comparable: some are active volunteer networks, while others are controlled field exercises.
+
+### NodeNet — Amsterdam emergency communications test
+
+**Type:** Municipal/emergency-services field test; LoRa-based MeshCore network
+
+On June 18, 2026, the City of Amsterdam and the Amsterdam-Amstelland Safety Region tested NodeNet during a simulated prolonged power outage. The network used solar- and battery-powered repeaters mounted at elevated sites, with portable companion radios at emergency support and coordination points.
+
+The report describes a setup of seven repeaters and twenty companion devices costing approximately €2,000 in total. Of messages actually sent, 75% reached at least one other monitored location and 73% were verifiably delivered to a recipient. Delivery was 81% during the first test block, when the network could use the wider Dutch MeshCore repeater community, and 60% during the isolated-network block.
+
+**What the test revealed:** Indoor and ground-floor transmission locations often performed poorly; coverage was insufficient in part of the city; the frequency change and volunteer coordination disrupted the second block; and the system had no automatic delivery acknowledgements. The report concludes that the network was promising and inexpensive, but not yet reliable enough for crisis use.
+
+**Why it matters:** This is unusually useful evidence because it documents both measured delivery and operational failure. It shows why a design needs coverage surveys, clear volunteer roles, training, acknowledgements, and repeated testing—not just low-power radios.
+
+Source: [Report: Technical Test of the NodeNet Mesh Network — Open Research Amsterdam (June 2026)](https://openresearch.amsterdam/en/page/164566/report-technical-test-of-the-nodenet-mesh-network)
+
+### CRISiSLab — Wellington LoRa mesh evaluation
+
+**Type:** 2026 conference paper describing a deployed and evaluated Meshtastic network
+
+A paper presented in the 2026 International Conference on Technology Innovations for Crisis Management describes CRISiSLab's deployment and evaluation of a Meshtastic LoRa mesh across Wellington's varied terrain. Its abstract identifies terrain as the main limiting factor and says that strategic device placement and radio preset selection were important to achieving city-scale communications.
+
+**Evidence limitation:** The repository record and abstract were accessible during this research pass, but the full paper download timed out. No packet-delivery percentages, range figures, or power measurements are included here because they could not be verified from the accessible material.
+
+**Why it matters:** It is a recent research example focused on a real city's terrain rather than a bench demonstration. The full paper should be reviewed before using it for quantitative comparisons.
+
+Sources:
+- [Publication record — Sri Lanka Institute of Information Technology](https://rda.sliit.lk/entities/publications/5434cb7c-276a-4876-975e-ef5fa8a58064)
+- [DOI: 10.54389/NEHG4452](https://doi.org/10.54389/NEHG4452)
+
+### DC Mesh — low-cost Wi-Fi mesh and solar range test
+
+**Type:** Community network experiment with published equipment costs and field measurements
+
+DC Mesh tested two directional LibreMesh Wi-Fi nodes using GL.iNet GL-AR300M16-Ext routers. The group reports a router cost of $39 per node, a $30 12-watt solar panel, and a $45 6,400mAh battery. In a test through wet trees, the farthest observed link was 600 feet, while the farthest reliable distance was about 400 feet; throughput at that distance was 0.6 Mbps.
+
+The group estimated that covering a neighborhood-sized area with roughly 100 nodes could cost about $4,000 using wall-powered nodes without directional antennas, or about $20,000 using solar-powered nodes with better antennas. These are the group's own rough estimates, not a general cost model.
+
+**Why it matters:** This is a concrete reminder that Wi-Fi's higher bandwidth comes with coverage, placement, and power costs. It also illustrates why a mixed network may use LoRa for sparse low-bandwidth messaging and Wi-Fi links only where local broadband is worth the added infrastructure.
+
+Source: [DC Mesh Wi-Fi Directional Antenna Test Results (July 22, 2026)](https://dcmesh.org/)
+
+### OVMesh — operational experience prompting a platform change
+
+**Type:** Volunteer-operated regional network; documented operational decision
+
+After nearly two years of operating and expanding Meshtastic infrastructure across parts of West Virginia, Ohio, and Pennsylvania, OVMesh announced in September 2026 that future development and equipment investment would move to MeshCore. The group cited recurring reliability, configuration, and remote-management problems that consumed volunteer time. It planned to retain some existing Meshtastic backhaul infrastructure while directing new sites and development toward MeshCore.
+
+This is an operator's account of its own experience, not an independent comparative benchmark proving one firmware is universally better.
+
+**Why it matters:** Long-term maintainability is a first-class technical constraint. Remote configuration, repeatable deployment, monitoring, troubleshooting, and volunteer workload can determine whether a network grows sustainably.
+
+Source: [OVMesh Moving Future Network Development to MeshCore (September 17, 2026)](https://ovmesh.com/ovmesh-moving-to-meshcore/)
+
+### Broadband sustainability — a wider infrastructure lesson
+
+**Type:** U.S. Government Accountability Office report; broader rural broadband context
+
+The U.S. Government Accountability Office's August 2026 report on broadband deployment notes that remote and rural networks can face higher operating and maintenance costs, and that financial sustainability after initial deployment funding remains a concern. It also identifies gaps in how the NTIA monitors the financial health of funded projects.
+
+This report is about federally funded broadband programs, not LoRa mesh networks. Its relevance is organizational: installation funding does not guarantee that a community can keep infrastructure maintained and services running over time.
+
+Source: [GAO-26-107725 — Broadband Deployment: Agencies Should Take Steps to Better Target Underserved Areas and Consider Sustainability (August 31, 2026)](https://files.gao.gov/reports/GAO-26-107725/index.html)
+
+---
+
+## 11. What these examples collectively show
 
 
 There is no need to assume that one project already provides every part of a distributed community infrastructure system. The examples above tend to solve different layers of the problem.
@@ -457,11 +525,11 @@ A few technologies can sound similar while solving different problems:
 3. **Local services and internet access are separate concerns.** A community can operate useful local applications even when it cannot reach the wider internet; the examples vary in how much they address this.
 4. **Disconnected operation needs its own design.** A network that can relay a message is not automatically a system that can synchronize databases, resolve conflicts, or manage identities while offline.
 5. **Performance depends on the job.** A sensor reading that arrives after ten seconds may be useful; a safety-critical machine-control message has very different requirements.
-6. **There is substantial prior art to reuse.** Community-network projects, LoRaWAN servers, messaging systems, mesh protocols, and DTN standards should be investigated before designing custom replacements.\n7. **A local network can be a useful environment, not just a transport.** Internet-in-a-Box, Kiwix, and Portable Network Kits show that local knowledge, chat, and collaboration services can run without internet access.\n8. **File sync and structured-data merging are different jobs.** Syncthing is useful for files; Automerge is an example of a CRDT-based application data layer. Neither removes the need to design permissions, identity, backups, and conflict semantics.\n9. **Power examples need to be read at the right scale.** TakNet 2 documents a specific low-power deployment, while PNK and Zenzeleni show solar/battery approaches. None provides a universal node power budget.
+6. **There is substantial prior art to reuse.** Community-network projects, LoRaWAN servers, messaging systems, mesh protocols, and DTN standards should be investigated before designing custom replacements.\n7. **A local network can be a useful environment, not just a transport.** Internet-in-a-Box, Kiwix, and Portable Network Kits show that local knowledge, chat, and collaboration services can run without internet access.\n8. **File sync and structured-data merging are different jobs.** Syncthing is useful for files; Automerge is an example of a CRDT-based application data layer. Neither removes the need to design permissions, identity, backups, and conflict semantics.\n9. **Power examples need to be read at the right scale.** TakNet 2 documents a specific low-power deployment, while PNK and Zenzeleni show solar/battery approaches. None provides a universal node power budget.\n10. **Field performance and operational reliability are different questions.** NodeNet's 2026 test reported roughly 73% verified delivery and identified coverage, acknowledgements, and volunteer coordination as problems. OVMesh's platform change likewise shows that maintenance effort can drive technology choices.
 
 These are research observations, not settled architectural decisions.
 
-## 11. Useful next research questions
+## 12. Useful next research questions
 
 - Which community networks have published practical operating, maintenance, funding, and governance models?
 - What are the real costs, power requirements, and maintenance burdens of LoRa, Wi-Fi mesh, Wi-Fi HaLow, Bluetooth Mesh, and wired links?
