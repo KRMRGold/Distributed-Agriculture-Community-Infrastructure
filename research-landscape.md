@@ -31,7 +31,8 @@ A project can fit more than one category. A working project is not automatically
 | Local/offline computing | Internet-in-a-Box, Kiwix, Portable Network Kits | Useful local services without internet access |
 | Disconnected data synchronization | Syncthing, Automerge, local-first software | Moving and merging changes after devices reconnect |
 | Power-resilient nodes | Portable Network Kits, TakNet 2, Zenzeleni, NodeNet, DC Mesh | Solar/battery operation and low-power design examples |
-| Recent community mesh field evidence | NodeNet (Amsterdam), CRISiSLab (Wellington), DC Mesh, OVMesh | Measured delivery, coverage limits, cost, firmware operations, volunteer workload |\n| Community operating models | guifi.net, Zenzeleni, B4RN, Freifunk, Digital Stewards | Governance, staffing, funding, local skills, maintenance, shared support |
+| Recent community mesh field evidence | NodeNet (Amsterdam), CRISiSLab (Wellington), DC Mesh, OVMesh | Measured delivery, coverage limits, cost, firmware operations, volunteer workload |
+| Community operating models | guifi.net, Zenzeleni, B4RN, Freifunk, Digital Stewards | Governance, staffing, funding, local skills, maintenance, shared support |
 | Research background | 2019 mesh survey, 2022 tractor trial, 2026 LoRaMESH/HaLow trial | Technology comparisons and measured field examples |
 
 ---
