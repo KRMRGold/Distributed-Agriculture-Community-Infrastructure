@@ -1,6 +1,6 @@
 # Existing Projects & Research
 
-Nov 16, 2026 · v0.3.0 · exploratory research
+Nov 16, 2026 · v0.4.0 · exploratory research
 
 ## Purpose
 
@@ -31,7 +31,7 @@ A project can fit more than one category. A working project is not automatically
 | Local/offline computing | Internet-in-a-Box, Kiwix, Portable Network Kits | Useful local services without internet access |
 | Disconnected data synchronization | Syncthing, Automerge, local-first software | Moving and merging changes after devices reconnect |
 | Power-resilient nodes | Portable Network Kits, TakNet 2, Zenzeleni, NodeNet, DC Mesh | Solar/battery operation and low-power design examples |
-| Recent community mesh field evidence | NodeNet (Amsterdam), CRISiSLab (Wellington), DC Mesh, OVMesh | Measured delivery, coverage limits, cost, firmware operations, volunteer workload |
+| Recent community mesh field evidence | NodeNet (Amsterdam), CRISiSLab (Wellington), DC Mesh, OVMesh | Measured delivery, coverage limits, cost, firmware operations, volunteer workload |\n| Community operating models | guifi.net, Zenzeleni, B4RN, Freifunk, Digital Stewards | Governance, staffing, funding, local skills, maintenance, shared support |
 | Research background | 2019 mesh survey, 2022 tractor trial, 2026 LoRaMESH/HaLow trial | Technology comparisons and measured field examples |
 
 ---
@@ -551,6 +551,121 @@ These are research observations, not settled architectural decisions.
 - How do offline systems handle identity, revocation, synchronization, and conflicting records?
 - Which projects have been maintained successfully by non-specialists over several years?
 - What can be learned from community networks outside agriculture, including rural broadband, disaster resilience, environmental monitoring, and remote research stations?
+
+## 13. Community operating models and long-term sustainability
+
+A community network needs an operating model as much as it needs a network design. The examples below show several ways to divide ownership, governance, technical work, funding, and local participation. They are models to learn from, not templates that can be transplanted unchanged.
+
+### guifi.net — shared infrastructure with professional service providers
+
+**Type:** Large community network with a commons-oriented governance and economic model
+
+guifi.net's experience shows one way to move beyond relying entirely on unpaid work. Its model enables professional activity around shared infrastructure and uses governance and economic tools to reinvest part of the benefits into the common network. The published case study describes a network with substantial economic activity and direct employment, while emphasizing that better operational and economic data helps communities plan investment and operations.
+
+A separate study of guifi.net's shared external-connectivity costs describes a cost-sharing mechanism combining an equal membership contribution with a variable share based on resource consumption. This is a useful example of separating the cost of shared common resources from costs that vary by participant.
+
+**Why it matters:** A community can retain shared infrastructure and community rules while allowing paid specialists and service providers to perform work that needs continuity or expertise.
+
+**Limitations:** The research describes a large, mature network. Its scale, institutional history, and service-provider ecosystem should not be assumed available to a small rural project at the beginning.
+
+Sources:
+- [Making Community Networks Economically Sustainable: The guifi.net Experience (2016)](https://zenodo.org/records/841131)
+- [On the guifi.net community network economics (2019)](https://www.sciencedirect.com/science/article/pii/S1389128619309077)
+
+### Zenzeleni — community cooperatives supported by a shared non-profit
+
+**Type:** Rural community-owned cooperative network in South Africa
+
+Zenzeleni separates local operation from wider support. Community-selected cooperative members own, govern, operate, and maintain networks in their communities. A non-profit company supports new cooperatives with training and setup, and helps existing cooperatives with shared network administration, mentoring, technical expertise, partnerships, and policy work.
+
+The organization also describes local families and individuals hosting and caring for hotspots and backbone nodes, shared services to reduce costs, and donor funding to provide start-up capital where communities could not reasonably take on initial repayments.
+
+**Why it matters:** Local control does not require every community to independently recreate specialist expertise, legal support, procurement, or training. A shared support organization can help several locally governed networks.
+
+**Limitations:** Zenzeleni's model is shaped by South African cooperative, regulatory, funding, and community contexts. Its structure is evidence of one workable division of responsibilities, not a universal legal recommendation.
+
+Source: [Zenzeleni — Our Model](https://zenzeleni.net/our-model/)
+
+### B4RN — community benefit society with paid staff and volunteers
+
+**Type:** Established rural fibre network in the United Kingdom
+
+B4RN began with local volunteers and community investment. It is organized as a Community Benefit Society: its published description says surpluses must benefit the communities served or expand the network. Its current model combines community groups and volunteers with staff and contractors for specialist construction and operational work. Volunteers can contribute to planning, permissions, route work, installation, and local coordination, with training provided for tasks requiring specific skills.
+
+Its current service charges are described as being set to cover operating costs. Its share investment model is primarily a way to raise capital for network construction and expansion; the investment booklet explicitly distinguishes share capital from day-to-day operating expenses.
+
+**Why it matters:** It demonstrates an evolution from volunteer-heavy construction toward a mixed workforce as the network grows. It also makes an important financial distinction: raising money to build infrastructure is not the same as funding its ongoing operation.
+
+**Limitations:** B4RN is a comparatively large fibre operator. Its financial and staffing model is not directly transferable to a small mesh or sensor network, but the separation of capital funding, service revenue, and volunteer participation is broadly relevant.
+
+Sources:
+- [B4RN — About Us](https://b4rn.org.uk/about-b4rn)
+- [B4RN — How We Connect You](https://b4rn.org.uk/how-we-build/how-we-connect)
+- [B4RN Investment Booklet (2025)](https://b4rn.org.uk/assets/documents/documents/b4rn-investment-booklet.pdf)
+
+### Freifunk — federated local volunteer communities
+
+**Type:** Distributed community wireless movement
+
+Freifunk is not one centrally operated network with one uniform organization. People are encouraged to find or form local communities, contribute routers, maintain firmware and services, document work, and share knowledge. Its participation guidance explicitly recognizes technical and non-technical contributions, including hardware and service maintenance, administration, writing, translation, design, and outreach. Local groups may establish clubs or use shared fundraising support when their administrative needs grow.
+
+**Why it matters:** A network can distribute responsibility across many small local groups rather than require one central organization to own every task. It also recognizes that a healthy technical community needs documentation, communication, administration, and outreach—not only people who configure routers.
+
+**Limitations:** Volunteer federation can be flexible, but continuity and service expectations may vary substantially between local groups. The model should not be assumed to provide guaranteed response times or professional support.
+
+Sources:
+- [Freifunk — How to Join](https://freifunk.net/en/how-to-join/)
+- [Freifunk — Create a New Community](https://freifunk.net/en/how-to-join/create-a-new-freifunk-community/)
+
+### Digital Stewards — train local people to operate their own infrastructure
+
+**Type:** Community technology training and capacity-building approach
+
+The Digital Stewards Program, developed through Allied Media Projects and the Open Technology Institute, trained community organizers to design, install, and manage neighborhood wireless networks. The Red Hook Initiative partnered with the program to train local Digital Stewards to grow and maintain its community network. The program also produced shared learning materials and workshops that other communities could adapt.
+
+**Why it matters:** Training is not just outreach or a one-time installation workshop. It can create local operational capacity, distribute knowledge, and reduce dependence on one external expert.
+
+**Limitations:** Training does not automatically guarantee long-term staffing, retention, or service reliability. It needs to be paired with recurring practice, documentation, equipment access, and a way to bring new people into the work.
+
+Source: [Community Technology Field Guide — (Re)Building Technology](https://communitytechnology.github.io/about.html)
+
+### Cross-model comparison
+
+| Model | Who controls the network? | Who carries specialist work? | How continuity is supported |
+|---|---|---|---|
+| guifi.net | Shared commons with governance tools | Professional providers and network participants | Economic reinvestment, cost-sharing, operational data |
+| Zenzeleni | Local community cooperatives | Local operators plus shared non-profit support | Training, mentoring, common services, shared expertise |
+| B4RN | Community Benefit Society | Paid staff, contractors, and trained volunteers | Service revenue, community investment for expansion, formal organization |
+| Freifunk | Federated local communities | Local volunteers and contributors | Peer learning, documentation, community groups, shared support |
+| Digital Stewards | Community-planned and governed | Trained local residents and partner organizations | Skills transfer, workshops, shared guides and learning |
+
+### Practical lessons for this project
+
+These are design implications drawn from the examples, not decisions about the project's final structure:
+
+1. **Separate governance from operations.** The community should be able to decide priorities, access rules, and acceptable trade-offs without requiring every participant to be a network engineer.
+2. **Name an owner for every operational responsibility.** A node needs a host, a maintenance contact, a record of who can access it, and a replacement or escalation path. "The community" is not a sufficiently specific assignment.
+3. **Budget recurring operations separately from construction.** Track power, connectivity, hosting, replacement hardware, batteries, repairs, transport, software maintenance, and training as recurring costs. A grant or donation that buys equipment does not automatically fund its upkeep.
+4. **Make volunteer work optional and bounded.** Volunteers can contribute meaningful work, but essential service continuity should not depend on one person being permanently available or on unpaid labor always being available.
+5. **Build a skills ladder.** Document simple checks that local hosts can perform, define tasks that require trained maintainers, and identify specialist work that should be contracted or shared across communities.
+6. **Design for handover.** Keep an asset register, topology and site records, configuration backups, maintenance history, contact/role records, and step-by-step recovery notes. Knowledge should belong to the project, not only to the person who installed a device.
+7. **Share expensive expertise and services.** Several small communities may be able to share procurement, monitoring, training, specialist maintenance, legal/accounting support, and upstream connectivity more affordably than each community doing everything alone.
+8. **Measure service health and organizational health.** Track outages and repair time, but also maintainer coverage, overdue maintenance, spare-parts availability, training coverage, recurring income versus recurring cost, and whether critical tasks have backups.
+9. **Keep funding types distinct.** Separate start-up grants, capital investment, recurring service income, member contributions, donations, and in-kind labor. Do not count a one-time equipment grant as evidence that future maintenance is funded.
+
+### A broader warning about rural infrastructure funding
+
+The U.S. Government Accountability Office's August 2026 review of federal broadband programs notes that rural and remote networks can face higher operating and maintenance costs after construction, and that financial sustainability needs attention beyond initial deployment funding. The report is about funded broadband providers rather than volunteer mesh networks, but the lifecycle distinction applies: a completed build is not proof that the service can be maintained.
+
+Source: [GAO-26-107725 — Broadband Deployment: Agencies Should Take Steps to Better Target Underserved Areas and Consider Sustainability (August 31, 2026)](https://www.gao.gov/products/gao-26-107725)
+
+### Research synthesis
+
+The evidence does not point to one universally best organizational form. It points to a recurring pattern: **local legitimacy and decision-making, explicit operational responsibility, shared access to specialist expertise, and recurring resources for maintenance**. The balance between cooperatives, non-profits, paid operators, and volunteer groups depends on the services being provided and the community's capacity.
+
+For a small early-stage project, the most transferable starting point is not to create a large formal organization immediately. It is to make responsibilities, records, maintenance expectations, and recurring costs explicit from the first deployment, while leaving room to add shared support or paid operations if the network grows.
+
+---
 
 ## Research status
 
