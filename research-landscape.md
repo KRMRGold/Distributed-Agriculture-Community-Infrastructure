@@ -28,7 +28,11 @@ A project can fit more than one category. A working project is not automatically
 | Mixed communication media | Reticulum, private agricultural network trial | Connecting different radio and wired links |
 | Local device mesh | Bluetooth Mesh | Short-range many-to-many sensor and building networks |
 | Disconnected communication | Delay-Tolerant Networking, Bundle Protocol v7 | Store-and-forward between places that are not always connected |
-| Local/offline computing | Internet-in-a-Box, Kiwix, Portable Network Kits | Useful local services without internet access |\n| Disconnected data synchronization | Syncthing, Automerge, local-first software | Moving and merging changes after devices reconnect |\n| Power-resilient nodes | Portable Network Kits, TakNet 2, Zenzeleni, NodeNet, DC Mesh | Solar/battery operation and low-power design examples |\n| Recent community mesh field evidence | NodeNet (Amsterdam), CRISiSLab (Wellington), DC Mesh, OVMesh | Measured delivery, coverage limits, cost, firmware operations, volunteer workload |\n| Research background | 2019 mesh survey, 2022 tractor trial, 2026 LoRaMESH/HaLow trial | Technology comparisons and measured field examples |
+| Local/offline computing | Internet-in-a-Box, Kiwix, Portable Network Kits | Useful local services without internet access |
+| Disconnected data synchronization | Syncthing, Automerge, local-first software | Moving and merging changes after devices reconnect |
+| Power-resilient nodes | Portable Network Kits, TakNet 2, Zenzeleni, NodeNet, DC Mesh | Solar/battery operation and low-power design examples |
+| Recent community mesh field evidence | NodeNet (Amsterdam), CRISiSLab (Wellington), DC Mesh, OVMesh | Measured delivery, coverage limits, cost, firmware operations, volunteer workload |
+| Research background | 2019 mesh survey, 2022 tractor trial, 2026 LoRaMESH/HaLow trial | Technology comparisons and measured field examples |
 
 ---
 
@@ -505,7 +509,11 @@ There is no need to assume that one project already provides every part of a dis
 | Local many-to-many device networks | Bluetooth Mesh |
 | Store-and-forward between disconnected places | DTN / Bundle Protocol |
 | Multi-radio farm networking | 2022 private-network field trial |
-| LoRa mesh with IP backhaul | 2026 LoRaMESH + Wi-Fi HaLow field trial |\n| Local offline information services | Internet-in-a-Box, Kiwix, Portable Network Kits | Local content and applications without internet |\n| File synchronization | Syncthing | Peer-to-peer file distribution and conflict preservation |\n| Structured offline collaboration | Automerge, local-first software | Replicated records and concurrent change merging |\n| Power-aware network deployments | TakNet 2, Portable Network Kits, Zenzeleni | Low-power nodes, battery/solar operation, local maintenance |
+| LoRa mesh with IP backhaul | 2026 LoRaMESH + Wi-Fi HaLow field trial |
+| Local offline information services | Internet-in-a-Box, Kiwix, Portable Network Kits | Local content and applications without internet |
+| File synchronization | Syncthing | Peer-to-peer file distribution and conflict preservation |
+| Structured offline collaboration | Automerge, local-first software | Replicated records and concurrent change merging |
+| Power-aware network deployments | TakNet 2, Portable Network Kits, Zenzeleni | Low-power nodes, battery/solar operation, local maintenance |
 
 ### Important distinctions
 
@@ -525,7 +533,11 @@ A few technologies can sound similar while solving different problems:
 3. **Local services and internet access are separate concerns.** A community can operate useful local applications even when it cannot reach the wider internet; the examples vary in how much they address this.
 4. **Disconnected operation needs its own design.** A network that can relay a message is not automatically a system that can synchronize databases, resolve conflicts, or manage identities while offline.
 5. **Performance depends on the job.** A sensor reading that arrives after ten seconds may be useful; a safety-critical machine-control message has very different requirements.
-6. **There is substantial prior art to reuse.** Community-network projects, LoRaWAN servers, messaging systems, mesh protocols, and DTN standards should be investigated before designing custom replacements.\n7. **A local network can be a useful environment, not just a transport.** Internet-in-a-Box, Kiwix, and Portable Network Kits show that local knowledge, chat, and collaboration services can run without internet access.\n8. **File sync and structured-data merging are different jobs.** Syncthing is useful for files; Automerge is an example of a CRDT-based application data layer. Neither removes the need to design permissions, identity, backups, and conflict semantics.\n9. **Power examples need to be read at the right scale.** TakNet 2 documents a specific low-power deployment, while PNK and Zenzeleni show solar/battery approaches. None provides a universal node power budget.\n10. **Field performance and operational reliability are different questions.** NodeNet's 2026 test reported roughly 73% verified delivery and identified coverage, acknowledgements, and volunteer coordination as problems. OVMesh's platform change likewise shows that maintenance effort can drive technology choices.
+6. **There is substantial prior art to reuse.** Community-network projects, LoRaWAN servers, messaging systems, mesh protocols, and DTN standards should be investigated before designing custom replacements.
+7. **A local network can be a useful environment, not just a transport.** Internet-in-a-Box, Kiwix, and Portable Network Kits show that local knowledge, chat, and collaboration services can run without internet access.
+8. **File sync and structured-data merging are different jobs.** Syncthing is useful for files; Automerge is an example of a CRDT-based application data layer. Neither removes the need to design permissions, identity, backups, and conflict semantics.
+9. **Power examples need to be read at the right scale.** TakNet 2 documents a specific low-power deployment, while PNK and Zenzeleni show solar/battery approaches. None provides a universal node power budget.
+10. **Field performance and operational reliability are different questions.** NodeNet's 2026 test reported roughly 73% verified delivery and identified coverage, acknowledgements, and volunteer coordination as problems. OVMesh's platform change likewise shows that maintenance effort can drive technology choices.
 
 These are research observations, not settled architectural decisions.
 
