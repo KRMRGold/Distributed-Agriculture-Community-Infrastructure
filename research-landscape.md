@@ -1,6 +1,6 @@
 # Existing Projects & Research
 
-Nov 16, 2026 · v0.1.0 · exploratory research
+Nov 16, 2026 · v0.2.0 · exploratory research
 
 ## Purpose
 
@@ -28,7 +28,7 @@ A project can fit more than one category. A working project is not automatically
 | Mixed communication media | Reticulum, private agricultural network trial | Connecting different radio and wired links |
 | Local device mesh | Bluetooth Mesh | Short-range many-to-many sensor and building networks |
 | Disconnected communication | Delay-Tolerant Networking, Bundle Protocol v7 | Store-and-forward between places that are not always connected |
-| Research background | 2019 mesh survey, 2022 tractor trial, 2026 LoRaMESH/HaLow trial | Technology comparisons and measured field examples |
+| Local/offline computing | Internet-in-a-Box, Kiwix, Portable Network Kits | Useful local services without internet access |\n| Disconnected data synchronization | Syncthing, Automerge, local-first software | Moving and merging changes after devices reconnect |\n| Power-resilient nodes | Portable Network Kits, TakNet 2, Zenzeleni | Solar/battery operation and low-power design examples |\n| Research background | 2019 mesh survey, 2022 tractor trial, 2026 LoRaMESH/HaLow trial | Technology comparisons and measured field examples |
 
 ---
 
@@ -280,7 +280,148 @@ Source: [Wireless Mesh Networking: An IoT-Oriented Perspective Survey on Relevan
 
 ---
 
-## 7. What these examples collectively show
+---
+
+## 8. Local computing and offline services
+
+Connectivity is only one part of a useful community network. A local server can provide services to nearby devices even when there is no route to the wider internet.
+
+### Internet-in-a-Box (IIAB)
+
+**Type:** Open-source offline server project; used in education and community settings
+
+Internet-in-a-Box provides an offline collection of educational and reference resources from a small computer, commonly a Raspberry Pi. Its documented content options include Wikipedia, books, Khan Academy videos, OpenStreetMap, and local publishing or learning tools. Connected users access the material through a local network and web browser.
+
+**Why it matters:** It is a concrete example of a community or school having useful local information services without depending on an external website being reachable.
+
+**Limitations:** The content must be selected, downloaded, stored, and updated. A local server also needs power, storage, backups, and someone responsible for maintaining it. The available content depends on what has been installed.
+
+Sources:
+- [Internet-in-a-Box project wiki](https://wiki.iiab.io/go/Main_Page)
+- [Internet-in-a-Box FAQ and hardware guidance](https://wiki.iiab.io/go/FAQ)
+
+### Kiwix and Kiwix Server / Hotspot
+
+**Type:** Open-source offline knowledge software; hotspot deployment
+
+Kiwix makes downloadable collections of web content available offline. Its ZIM archives can include resources such as Wikipedia and other reference collections. Kiwix Server can host those archives on a local network so that phones, laptops, and desktops can access them through an ordinary browser. Kiwix Hotspot packages this approach as a local Wi-Fi network with its own content server.
+
+**Why it matters:** This is a relatively narrow, understandable local service that could be installed on a community server or small computer. It demonstrates that local information access does not require a custom network protocol.
+
+**Limitations:** Kiwix is primarily a content distribution and reading system, not a general-purpose community collaboration platform. Content freshness depends on downloading and distributing updated archives.
+
+Sources:
+- [Kiwix Server](https://get.kiwix.org/en/solutions/applications/kiwix-server/)
+- [Kiwix Hotspots](https://get.kiwix.org/en/solutions/hotspots/)
+- [Kiwix FAQ: serving content on a local network](https://get.kiwix.org/en/faq/)
+
+### Portable Network Kits (PNK) — Community Tech NY
+
+**Type:** Community-built portable network kit; training and emergency standalone network
+
+Community Tech NY describes a Portable Network Kit as a wireless network in a waterproof, battery-powered, solar-enabled case. It uses off-the-shelf hardware and open-source software to create a self-contained local network with a server, chat service, and document editor. It can also connect to an existing internet connection when one is available.
+
+The kits were developed for community network education and have also been repurposed as standalone emergency networks. They are used as a hands-on teaching tool rather than sold as a standard off-the-shelf product.
+
+**Why it matters:** This combines local connectivity, local applications, portable hardware, backup power, and community training in one real project. It is a particularly useful example of treating a network as something people can build and govern, not just consume.
+
+**Limitations:** The project description establishes the kit's design and use, but does not provide a universal runtime, solar yield, or cost figure. Those would need to be measured for a particular build and location.
+
+Sources:
+- [Community Tech NY — Portable Network Kits](https://www.communitytechny.org/portable-network-kits)
+- [PNK hardware and software documentation](https://community-tech-lab.github.io/PNK/)
+
+---
+
+## 9. Offline synchronization and local-first software
+
+A local service can keep working while disconnected, but shared data creates another problem: two or more devices may change the same information before they can exchange updates.
+
+"Synchronization" can mean several different things. Copying files, merging structured records, delivering queued messages, and reconciling edits to a shared document are not interchangeable operations.
+
+### Syncthing
+
+**Type:** Open-source peer-to-peer file synchronization
+
+Syncthing synchronizes selected folders between devices. It exchanges file indexes and transfers changed file blocks between connected devices. It does not require a central cloud storage account; devices can synchronize directly when they can reach one another.
+
+When two devices modify the same file independently, Syncthing detects the conflict and preserves a conflicting copy rather than silently treating the two edits as a semantic merge.
+
+**Why it matters:** It is an existing solution for distributing documents, manuals, exports, and other files across devices that may not always be online together.
+
+**Limitations:** Syncthing synchronizes files, not the meaning of application records. It cannot safely merge arbitrary database rows or understand whether two edits to an equipment record are compatible. Conflicting files may need human review. Synchronization is also not a substitute for independent backups.
+
+Sources:
+- [Syncthing — Understanding Synchronization](https://docs.syncthing.net/users/syncing.html)
+- [Syncthing FAQ](https://docs.syncthing.net/users/faq.html)
+
+### Automerge
+
+**Type:** Open-source local-first data and synchronization library
+
+Automerge provides data structures for applications that keep local copies of shared data on multiple devices. Each device can make changes independently, including while offline. When devices reconnect, Automerge exchanges changes and merges concurrent edits using conflict-free replicated data types (CRDTs).
+
+Its data model is independent of a specific network transport. The project documents peer-to-peer and client/server synchronization, as well as exchanging data through one-way methods such as files on removable media.
+
+**Why it matters:** This is closer to the shared-record problem than file synchronization. It provides an existing implementation to study before designing custom merge logic for things such as equipment registries, task claims, or shared plans.
+
+**Limitations:** A CRDT does not automatically make every application-level conflict meaningful or desirable. The data model must be designed carefully, and authorization, identity, retention, backups, and application-specific validation still need to be handled. Automerge is a library for application developers, not a complete ready-to-deploy community information system.
+
+Sources:
+- [Automerge documentation](https://automerge.org/docs/)
+- [Automerge network synchronization tutorial](https://automerge.org/docs/tutorial/network-sync/)
+- [Automerge project overview](https://automerge.org/)
+
+### Local-first software principles
+
+**Type:** Research paper and design principles
+
+The 2019 essay by Martin Kleppmann, Adam Wiggins, Peter van Hardenberg, and Mark McGranaghan describes software that treats users' local copies of data as primary, supports offline work, and enables collaboration across devices. It discusses the trade-offs of different storage and synchronization approaches, including CRDTs.
+
+**Why it matters:** It provides a useful design lens for the community infrastructure idea: applications should not become unusable merely because a central server or internet connection disappears.
+
+**Limitations:** The essay is a set of principles and technical discussion, not a deployment recipe. A local-first application still needs a carefully designed data model, permissions, synchronization behavior, and backup strategy.
+
+Source: [Local-first software: You own your data, in spite of the cloud (2019)](https://www.inkandswitch.com/essay/local-first/)
+
+---
+
+## 10. Power-resilient local network examples
+
+Power is not an accessory concern for offline infrastructure. It determines which nodes stay available, for how long, and which services need to be reduced or shut down during an outage.
+
+### TakNet 2 — rural school wireless mesh, Thailand
+
+**Type:** Deployed rural school mesh-network research project
+
+The Asian Institute of Technology's intERLab describes a wireless mesh network deployed at Ban Mae Kued Luang School in Thailand in January 2014. The network used low-cost Wi-Fi routers running a self-configuring mesh protocol, with local USB storage used to cache educational video and ebook content.
+
+The project page reports a maximum router power consumption of 5 W, optional solar power, and an optional internal battery described as providing more than four hours of operation. The deployment included an educational video-on-demand service.
+
+**Why it matters:** This is a useful earlier example of combining a local content service with a rural Wi-Fi mesh, while documenting a concrete power figure and battery option.
+
+**Limitations:** It is a 2014 deployment and should not be treated as a current hardware recommendation. The stated power and runtime describe the project's equipment and configuration, not a universal mesh-node budget.
+
+Source: [TakNet 2 — A rural school wireless mesh network](https://interlab.ait.ac.th/cwmn/tak2.php)
+
+### Portable Network Kits — solar and battery-enabled network
+
+The Portable Network Kit described above is also relevant here: its documented design combines a battery-powered case with solar capability and a local server. The public project description does not specify a standard runtime or power budget, so it is evidence of a working design approach, not a quantified energy benchmark.
+
+Source: [Community Tech NY — Portable Network Kits](https://www.communitytechny.org/portable-network-kits)
+
+### Zenzeleni Networks — community-owned solar-powered access
+
+The Zenzeleni case study already listed in §1 describes community Wi-Fi hotspots using solar, battery, or mains power, with local cooperative ownership and operation. It is useful as an example of power choices being connected to maintenance and local responsibility, rather than treated as a hardware-only decision.
+
+Source: [ILO case study: Zenzeleni Community Networks (PDF)](https://www.anses.org.za/wp-content/uploads/2022/11/K-16351-ILO-Case-study_Zenzeleni_DevV3.pdf)
+
+**What these examples do not settle:** A reliable design still needs a measured energy budget for each node type, including radio duty cycle, compute load, battery reserve, seasonal solar availability, weather, temperature, and the desired outage duration. A published wattage for one router is not enough to size a community network.
+
+---
+
+## 11. What these examples collectively show
+
 
 There is no need to assume that one project already provides every part of a distributed community infrastructure system. The examples above tend to solve different layers of the problem.
 
@@ -296,7 +437,7 @@ There is no need to assume that one project already provides every part of a dis
 | Local many-to-many device networks | Bluetooth Mesh |
 | Store-and-forward between disconnected places | DTN / Bundle Protocol |
 | Multi-radio farm networking | 2022 private-network field trial |
-| LoRa mesh with IP backhaul | 2026 LoRaMESH + Wi-Fi HaLow field trial |
+| LoRa mesh with IP backhaul | 2026 LoRaMESH + Wi-Fi HaLow field trial |\n| Local offline information services | Internet-in-a-Box, Kiwix, Portable Network Kits | Local content and applications without internet |\n| File synchronization | Syncthing | Peer-to-peer file distribution and conflict preservation |\n| Structured offline collaboration | Automerge, local-first software | Replicated records and concurrent change merging |\n| Power-aware network deployments | TakNet 2, Portable Network Kits, Zenzeleni | Low-power nodes, battery/solar operation, local maintenance |
 
 ### Important distinctions
 
@@ -316,11 +457,11 @@ A few technologies can sound similar while solving different problems:
 3. **Local services and internet access are separate concerns.** A community can operate useful local applications even when it cannot reach the wider internet; the examples vary in how much they address this.
 4. **Disconnected operation needs its own design.** A network that can relay a message is not automatically a system that can synchronize databases, resolve conflicts, or manage identities while offline.
 5. **Performance depends on the job.** A sensor reading that arrives after ten seconds may be useful; a safety-critical machine-control message has very different requirements.
-6. **There is substantial prior art to reuse.** Community-network projects, LoRaWAN servers, messaging systems, mesh protocols, and DTN standards should be investigated before designing custom replacements.
+6. **There is substantial prior art to reuse.** Community-network projects, LoRaWAN servers, messaging systems, mesh protocols, and DTN standards should be investigated before designing custom replacements.\n7. **A local network can be a useful environment, not just a transport.** Internet-in-a-Box, Kiwix, and Portable Network Kits show that local knowledge, chat, and collaboration services can run without internet access.\n8. **File sync and structured-data merging are different jobs.** Syncthing is useful for files; Automerge is an example of a CRDT-based application data layer. Neither removes the need to design permissions, identity, backups, and conflict semantics.\n9. **Power examples need to be read at the right scale.** TakNet 2 documents a specific low-power deployment, while PNK and Zenzeleni show solar/battery approaches. None provides a universal node power budget.
 
 These are research observations, not settled architectural decisions.
 
-## 8. Useful next research questions
+## 12. Useful next research questions
 
 - Which community networks have published practical operating, maintenance, funding, and governance models?
 - What are the real costs, power requirements, and maintenance burdens of LoRa, Wi-Fi mesh, Wi-Fi HaLow, Bluetooth Mesh, and wired links?
