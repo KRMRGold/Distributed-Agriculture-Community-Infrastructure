@@ -514,6 +514,7 @@ There is no need to assume that one project already provides every part of a dis
 | File synchronization | Syncthing | Peer-to-peer file distribution and conflict preservation |
 | Structured offline collaboration | Automerge, local-first software | Replicated records and concurrent change merging |
 | Power-aware network deployments | TakNet 2, Portable Network Kits, Zenzeleni | Low-power nodes, battery/solar operation, local maintenance |
+| Community mesh field evidence | NodeNet, CRISiSLab Wellington, DC Mesh, OVMesh | Measured delivery, terrain/coverage limits, deployment cost, maintenance burden |
 
 ### Important distinctions
 
@@ -553,6 +554,6 @@ These are research observations, not settled architectural decisions.
 
 ## Research status
 
-This is an initial desk-research collection, not an exhaustive survey. The summaries are based on the linked project documentation, standards, case studies, and papers. No hardware was tested and no independent performance replication was performed.
+This is an exploratory desk-research collection, not an exhaustive survey. The summaries are based on the linked project documentation, standards, case studies, and papers. No hardware was tested and no independent performance replication was performed.
 
 The next pass should deepen the most relevant examples, check their current maintenance and deployment status, and compare practical costs and limitations before any implementation decisions are made.
