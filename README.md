@@ -24,6 +24,10 @@ Three things are marked differently:
 
 If you only read one thing, read §1. It explains all of this better than I just did.
 
+
+Research landscape
+For readable summaries of existing community networks, mesh and radio projects, offline networking, and related field trials, see [Existing Projects & Research](research-landscape.md).
+
 Where it stands
 Phase 0, basically. The doc lays out five development phases, but the project is still in the "research and decide things" phase. The four things that need deciding before anything gets built:
 
