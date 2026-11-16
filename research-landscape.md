@@ -282,7 +282,7 @@ Source: [Wireless Mesh Networking: An IoT-Oriented Perspective Survey on Relevan
 
 ---
 
-## 8. Local computing and offline services
+## 7. Local computing and offline services
 
 Connectivity is only one part of a useful community network. A local server can provide services to nearby devices even when there is no route to the wider internet.
 
@@ -333,7 +333,7 @@ Sources:
 
 ---
 
-## 9. Offline synchronization and local-first software
+## 8. Offline synchronization and local-first software
 
 A local service can keep working while disconnected, but shared data creates another problem: two or more devices may change the same information before they can exchange updates.
 
@@ -386,7 +386,7 @@ Source: [Local-first software: You own your data, in spite of the cloud (2019)](
 
 ---
 
-## 10. Power-resilient local network examples
+## 9. Power-resilient local network examples
 
 Power is not an accessory concern for offline infrastructure. It determines which nodes stay available, for how long, and which services need to be reduced or shut down during an outage.
 
@@ -420,7 +420,7 @@ Source: [ILO case study: Zenzeleni Community Networks (PDF)](https://www.anses.o
 
 ---
 
-## 11. What these examples collectively show
+## 10. What these examples collectively show
 
 
 There is no need to assume that one project already provides every part of a distributed community infrastructure system. The examples above tend to solve different layers of the problem.
@@ -461,7 +461,7 @@ A few technologies can sound similar while solving different problems:
 
 These are research observations, not settled architectural decisions.
 
-## 12. Useful next research questions
+## 11. Useful next research questions
 
 - Which community networks have published practical operating, maintenance, funding, and governance models?
 - What are the real costs, power requirements, and maintenance burdens of LoRa, Wi-Fi mesh, Wi-Fi HaLow, Bluetooth Mesh, and wired links?
