@@ -1,5 +1,5 @@
 Distributed Agriculture & Community Infrastructure
-Nov 16, 2026 · @Roxy · v0.5.1 · exploratory ideation
+Nov 16, 2026 · @Roxy · v0.5.2 · exploratory ideation
 
 1. What this document is (and isn't)
 This is an ideation document. It exists to think through an idea before it becomes a design doc. It is a place to park decisions, open questions, and the reasoning behind them while the idea is still forming. It is not a specification, not a build plan, and not a commitment to any particular implementation.
@@ -17,6 +17,12 @@ What we don't know yet — questions in §12, tagged with the phase that needs a
 What this is for. The goal is to get the idea to a state where a real design doc can be written: one that answers the questions in §12, resolves the open decisions in §8.1, and commits to specific choices instead of listing candidates. This document is the scaffolding for that.
 
 Relationship to ITU-T Y.2256 (09/2024). ITU-T Y.2256 is a standards Recommendation from the International Telecommunication Union (ITU) on network-based unmanned smart farms. It's a useful reference point because it describes a similar system from the outside. But Y.2256 assumes a network that is there, and this idea assumes a network that might not be there. So we note where the idea aligns with Y.2256 and where it deliberately departs — not because conformance matters yet, but because the comparison sharpens what's different about this idea. How far that alignment goes is itself an open question (§12); so far we've only read Y.2256's summary and table of contents.
+
+AI-assisted provenance and intended use
+
+This document was developed through a human-directed, AI-assisted process. Research was gathered, summarized, compared, drafted, edited, and iterated with AI. The document records a developing line of thought; it is not an independently validated expert assessment, formal specification, or final design. AI-assisted summaries and interpretations may be incomplete or mistaken, and linked sources should be consulted for consequential technical claims.
+
+This is also a handoff document. A reader can use it to get the basic idea, or give it to their own AI assistant and ask for a plain-language summary, a critique, an explanation of unfamiliar areas, or help exploring whichever branch interests them. The reader is not expected to agree with the current framing or follow every direction. The intention is to make the accumulated context useful and portable so someone else can take it forward in their own way.
 
 1.1 Requirement convention
 "Shall" marks a requirement that an implementation following this idea must meet. "Should" marks a recommended practice. "May" marks an option. A heading marked "(a requirement)" or "(requirements)" contains at least one "shall". These terms are internal to this document and do not imply conformance to any external standard. Where a requirement cannot be met, the deviation and its rationale shall be recorded in the deployment's decision record (§13, phase 1).
