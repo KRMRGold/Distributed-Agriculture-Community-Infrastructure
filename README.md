@@ -11,18 +11,18 @@ What if a farm could keep farming when the internet goes away?
 
 
 The one comparison you'll see a lot
-The doc keeps referencing ITU-T Y.2256, which is a real standards document about network-based smart farms. I'm using it as a mirror: it says what a smart farm looks like when the network is there, and this idea is about what happens when the network is not there. Comparing the two makes the differences clearer. I've only read its summary and table of contents so far, and the doc says so.
+The doc keeps referencing ITU-T Y.2256, which is a real standards document about network-based smart farms. just using it as a mirror: it says what a smart farm looks like when the network is there, and this idea is about what happens when the network is not there. Comparing the two makes the differences clearer. AI  read its summary and table of contents so far, and the doc says so.
 
 How to read the notes
 Three things are marked differently:
 
-"What we believe" — choices I've made, with reasons.
+"What we believe" — choices made, with reasons.
 
 "What we require" — marked with "shall." These are things an implementation would need to do if it claims to follow the idea. They're internal to the doc, not claims about any external standard.
 
 "What we don't know yet" — the open questions section. Each one is tagged with the phase that needs an answer.
 
-If you only read one thing, read §1. It explains all of this better than I just did.
+If you only read one thing, read §1. It explains all of this better
 
 
 Research landscape
