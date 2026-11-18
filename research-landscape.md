@@ -1,6 +1,6 @@
 # Existing Projects & Research
 
-Nov 16, 2026 · v0.4.0 · exploratory research
+Nov 16, 2026 · v0.4.1 · exploratory research
 
 ## Purpose
 
@@ -9,6 +9,14 @@ This document collects examples of things people have already built, deployed, t
 The subject is broader than farming. Agriculture is one useful environment for testing networks across fields, buildings, sensors, machines, and remote locations. The wider interest is how communities can operate and connect their own infrastructure using a mixture of wireless and wired technologies, local computing, and systems that tolerate unreliable internet access.
 
 This is a readable research collection, not a proposed architecture or implementation plan. The summaries are starting points; the linked sources are the authority for technical details.
+
+## How this collection was made and how to use it
+
+This collection was assembled and iterated with AI through a human-directed research process. AI was used to discover and organize examples, summarize source material, compare approaches, draft explanations, and refine the document. It is an AI-assisted research digest, not an independently peer-reviewed survey or a guarantee that every detail is correct or current.
+
+The goal is to give a reader a useful first-pass map of the landscape. You can read it directly, or give this document to your own AI assistant and ask it to explain the basic idea, summarize a section, compare particular examples, identify unanswered questions, or help you pursue a direction that interests you. You do not need to accept the current framing or explore every topic. The collection is meant to make research portable and provide a starting point—not to prescribe what someone should build.
+
+Use the linked sources to verify important details and to continue beyond the summaries. A linked source may itself be a project description, advocacy page, paper, or field report; consider its perspective and evidence when weighing its claims. Reported results apply to their documented context unless independently established otherwise.
 
 ## How to read the entries
 
